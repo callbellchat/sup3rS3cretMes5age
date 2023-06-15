@@ -1,4 +1,4 @@
-*{
+* {
   box-sizing: border-box;
 }
 
@@ -6,25 +6,27 @@
   text-align: center;
 }
 
-html,body {
+html,
+body {
   min-width: 100vw;
-  min-height: 100vh;
-  font-family: 'Montserrat', sans-serif;
+  height: 100vh;
+  font-family: "Montserrat", sans-serif;
   background-image: linear-gradient(to bottom left, #3e366a, #09112f);
   -webkit-font-smoothing: antialiased;
   display: flex;
   align-items: center;
   justify-content: center;
   color: transparent;
-  text-shadow: 0 0 5px rgba(0,0,0,0.5);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-h1{
+h1 {
   font-weight: 400;
   margin-bottom: 4px;
 }
 
-textarea{
+textarea {
+  margin-top: 20px;
   border-radius: 6px;
   border: none;
   padding: 20px;
@@ -39,7 +41,7 @@ button {
   margin-top: 32px;
   min-width: 210px;
   color: white;
-  box-shadow: 0 2px 6px 0 rgba(5,15,44,0.5);
+  box-shadow: 0 2px 6px 0 rgba(5, 15, 44, 0.5);
   padding: 0 20px;
   display: inline-block;
   border-radius: 50px;
@@ -60,11 +62,11 @@ button {
   width: 100vw;
 }
 
-.encrypt{
+.encrypt {
   background-image: linear-gradient(80deg, #00aeff, #3369e7);
 }
 
-.clipboard{
+.clipboard {
   background-image: linear-gradient(284deg, #1cc7d0, #2dde98);
 }
 
@@ -79,20 +81,20 @@ button {
 .subtitle {
   margin-top: 4px;
   margin-bottom: 32px;
-  opacity: .9;
+  opacity: 0.9;
   font-weight: 400;
 }
 
 .send {
   text-align: center;
-  color: white; 
+  color: white;
 }
 
 div.footer {
-   position: absolute;
-   height: 24px;
-   right: 10px;
-   bottom: 10px;
+  position: absolute;
+  height: 24px;
+  right: 10px;
+  bottom: 10px;
 }
 
 div.footer img {
@@ -115,8 +117,8 @@ div.footer img {
   background: #d3d3d3;
   outline: none;
   opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
 }
 
 .slider:hover {
@@ -129,7 +131,7 @@ div.footer img {
   width: 35px;
   height: 35px;
   border-radius: 5px;
-  background: #4CAF50;
+  background: #4caf50;
   cursor: pointer;
 }
 
@@ -137,6 +139,6 @@ div.footer img {
   width: 35px;
   height: 35px;
   border-radius: 5px;
-  background: #4CAF50;
+  background: #4caf50;
   cursor: pointer;
 }
