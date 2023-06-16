@@ -97,7 +97,7 @@ $("#secretform").submit(function(e) {
   const form = new FormData($("#secretform")[0]);
 
   $('.encrypt').css({opacity: 0, pointerEvents: "none", visibility: "visible"});
-  $('.loading').css({display: "block"});
+  $('.loading').css({display: "block", visibility: "visible"});
 
   $.ajax({
     type: "POST",
