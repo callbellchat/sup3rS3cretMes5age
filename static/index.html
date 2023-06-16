@@ -18,7 +18,10 @@
 <body>
   <main class="send">
     <div class="container">
-      <h1>Secret Message</h1>
+      <div class="logo-container">
+        <img src="/static/logo-v2-no-text.svg" width="30" height="30" />
+        <h1>Secret Message</h1>
+      </div>
       <p class="subtitle">Send a secret one-time read only message</p>
         <form id="secretform" action="/no-internet" method="POST" enctype="multipart/form-data">
 
@@ -36,6 +39,27 @@
             </select>
           </div>
           <div class="button_wrapper">
+            <div class="loading">
+              <p>Loading...</p>
+              <div aria-label="Orange and tan hamster running in a metal wheel" role="img" class="wheel-and-hamster">
+                <div class="wheel"></div>
+                <div class="hamster">
+                  <div class="hamster__body">
+                    <div class="hamster__head">
+                      <div class="hamster__ear"></div>
+                      <div class="hamster__eye"></div>
+                      <div class="hamster__nose"></div>
+                    </div>
+                    <div class="hamster__limb hamster__limb--fr"></div>
+                    <div class="hamster__limb hamster__limb--fl"></div>
+                    <div class="hamster__limb hamster__limb--br"></div>
+                    <div class="hamster__limb hamster__limb--bl"></div>
+                    <div class="hamster__tail"></div>
+                  </div>
+                </div>
+                <div class="spoke"></div>
+              </div>
+            </div>
             <button class="encrypt" type="submit" name="action">Submit
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 268.832 268.832"><path fill="#FFF" d="M265.17 125.577l-80-80c-4.88-4.88-12.796-4.88-17.677 0-4.882 4.882-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.598-12.5 12.5 0 6.903 5.597 12.5 12.5 12.5h213.654l-58.66 58.662c-4.88 4.882-4.88 12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66s6.398-1.22 8.84-3.66l79.997-80c4.883-4.882 4.883-12.796 0-17.678z"/></svg>
             </button>
@@ -72,6 +96,9 @@ $("#secretform").submit(function(e) {
   if (this.val === "") return false;
   const form = new FormData($("#secretform")[0]);
 
+  $('.encrypt').css({opacity: 0, pointerEvents: "none", visibility: "hidden"});
+  $('.loading').css({display: "block"});
+
   $.ajax({
     type: "POST",
     url: "/secret",
@@ -85,7 +112,7 @@ $("#secretform").submit(function(e) {
         pointerEvents: "auto",
         visibility: "visible"
       });
-      $(".encrypt").css({
+      $(".loading").css({
         opacity: 0,
         pointerEvents: "none",
         visibility: "hidden"
@@ -100,6 +127,9 @@ $("#secretform").submit(function(e) {
         visibility: "hidden",
         pointerEvents: "none"
       });
+
+      $(".subtitle").text('Your message is ready! Please copy the link below and send it 🙌 The link will only be accessible once.');
+
       showURL(data.token, data.filetoken, data.filename);
     }
   });
